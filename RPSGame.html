@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Rock, Paper, Scissors Game</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+		<link rel="stylesheet" href="css/style.css" type="text/css"></link>
+	</head>
+	<body>
+		<div class="container text-center">
+			<h1 id="head">JavaScript Rock, Paper, Scissors Game</h1>
+			<br>
+			<div class="row">
+				<div class="col-sm-2">
+					<p title="0" id="pscore">Player 1 Score : </p>
+				</div>
+				<div class="col-sm-4">
+					<p>Player 1</p>
+					<img src="" width=300 height=300 id="p1" style="opacity:0;">
+				</div>
+				<div class="col-sm-4">
+					<p>Computer</p>
+					<img src="" width=300 height=300 id="p2" style="opacity:0;">
+				</div>
+				<div class="col-sm-2">
+					<p title="0" id="cscore">Computer Score : </p>
+				</div>
+			</div>
+			<br>
+			<button class="btn" onclick="result1()"><img src="images/rock.png" height=100 width=100></button>
+			<button class="btn" onclick="result2()"><img src="images/paper.png" height=120 width=120></button>
+			<button class="btn" onclick="result3()"><img src="images/scissors.png" height=120 width=100></button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		result1 = () =>
+		{
+			var arr = ['images/rock.png','images/paper.png','images/scissors.png'];
+			var n = Math.floor(Math.random() * 3);
+			document.getElementById("p2").src = arr[n];
+			document.getElementById("p2").style.opacity = 1;
+			document.getElementById("p1").src = arr[0];
+			document.getElementById("p1").style.opacity = 1;
+			if(n==2)
+			{
+				document.getElementById("head").innerHTML = "Player 1 wins!";
+				var sc = parseInt(document.getElementById("pscore").title) + 1;
+				document.getElementById("pscore").title = sc;
+				document.getElementById("pscore").innerHTML = "Player 1 Score : "+sc;
+			}
+			else if(n==1)
+			{
+				document.getElementById("head").innerHTML = "Computer wins!";
+				var sc = parseInt(document.getElementById("cscore").title) + 1;
+				document.getElementById("cscore").title = sc;
+				document.getElementById("cscore").innerHTML = "Computer Score : "+sc;
+			}
+			else
+				document.getElementById("head").innerHTML = "DRAW!";
+		}
+		result2 = () =>
+		{
+			var arr = ['images/rock.png','images/paper.png','images/scissors.png'];
+			var n = Math.floor(Math.random() * 3);
+			document.getElementById("p2").src = arr[n];
+			document.getElementById("p2").style.opacity = 1;
+			document.getElementById("p1").src = arr[1];
+			document.getElementById("p1").style.opacity = 1;
+			if(n==0)
+			{
+				document.getElementById("head").innerHTML = "Player 1 wins!";
+				var sc = parseInt(document.getElementById("pscore").title) + 1;
+				document.getElementById("pscore").title = sc;
+				document.getElementById("pscore").innerHTML = "Player 1 Score : "+sc;
+			}
+			else if(n==2)
+			{
+				document.getElementById("head").innerHTML = "Computer wins!";
+				var sc = parseInt(document.getElementById("cscore").title) + 1;
+				document.getElementById("cscore").title = sc;
+				document.getElementById("cscore").innerHTML = "Computer Score : "+sc;
+			}
+			else
+				document.getElementById("head").innerHTML = "DRAW!";
+		}
+		result3 = () =>
+		{
+			var arr = ['images/rock.png','images/paper.png','images/scissors.png'];
+			var n = Math.floor(Math.random() * 3);
+			document.getElementById("p2").src = arr[n];
+			document.getElementById("p2").style.opacity = 1;
+			document.getElementById("p1").src = arr[2];
+			document.getElementById("p1").style.opacity = 1;
+			if(n==1)
+			{
+				document.getElementById("head").innerHTML = "Player 1 wins!";
+				var sc = parseInt(document.getElementById("pscore").title) + 1;
+				document.getElementById("pscore").title = sc;
+				document.getElementById("pscore").innerHTML = "Player 1 Score : "+sc;
+			}
+			else if(n==0)
+			{
+				document.getElementById("head").innerHTML = "Computer wins!";
+				var sc = parseInt(document.getElementById("cscore").title) + 1;
+				document.getElementById("cscore").title = sc;
+				document.getElementById("cscore").innerHTML = "Computer Score : "+sc;
+			}
+			else
+				document.getElementById("head").innerHTML = "DRAW!";
+		}
+	</script>
+</html>
